@@ -115,7 +115,7 @@
         "redirect": function(type, basepath) {
             settings["basepath"] = basepath = basepath == null ? settings["basepath"] : basepath;
             settings["type"] = type = type == null ? settings["type"] : type;
-            if (window.top == window.self) {
+            if (window.top == window.self && !settings["type"]) {
                 var relative = parseURL(null, false, true)._relative;
                 var path = windowLocation.pathname + windowLocation.search;
                 if (isSupportHistoryAPI) {
